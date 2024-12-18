@@ -1,9 +1,6 @@
-## Put comments here that give an overall description of what your
-## functions do
+library(MASS)
 
-## creates a list object that contains functions to set or 
-## retrieve information about the matrix to be inverted and
-## the inverted matrix if it has been calculated
+## creates a list object that contains functions to set or retrieve information about the matrix to be inverted and the inverted matrix if it has been calculated
 ## NOTE: setmatr should not be used outside the bounds of cacheSolve
 
 makeCacheMatrix <- function(x = matrix()) {
@@ -21,9 +18,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## A function to check for the presence of a calculated solution
-## and to obtain a solution if no solution is present. Solution
-## is obtained via Gauss-Jordan Elimination (GJE)
+## A function to check for the presence of a calculated solution and to obtain a solution if no solution is present. Solution is obtained via Gauss-Jordan Elimination (GJE)
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -58,8 +53,8 @@ cacheSolve <- function(x, ...) {
 	  }
 	  
 	  ##extracting resultant matrix
-	  m <- res[,(size+1):(2*size)]
+	  m <- fractions(res[,(size+1):(2*size)])
 
-        x$setmatr(m)
+        fractions(x$setmatr(m))
         m
 }
