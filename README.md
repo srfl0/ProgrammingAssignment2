@@ -9,3 +9,4 @@ Instructions for use:
 
 NOTE:
 Do not attempt to use setmatr() outside the bounds of cacheSolve, or matr will have to be re-entered.
+This script is written in R version 4.4.1
